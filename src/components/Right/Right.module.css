@@ -1,0 +1,10 @@
+
+.right_bar {
+    grid-column: 3;
+    grid-row: 2 / 4;
+    margin-left: 2px;
+}
+
+.shadow {
+    border: solid 1px rgb(219, 219, 219);
+}

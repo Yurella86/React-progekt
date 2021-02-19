@@ -1,0 +1,17 @@
+
+.item {
+    display: flex;
+    width: 50px;
+    margin-top: 2px;
+}
+
+.item img {
+
+    width: 89px;
+    border-radius: 60px;
+}
+
+.item span{
+    margin: 30px 10px;
+
+}

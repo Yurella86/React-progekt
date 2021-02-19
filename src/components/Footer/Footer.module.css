@@ -1,0 +1,9 @@
+
+.footer{
+    grid-column: 1 / 4;
+    background-color: rgb(51, 51, 51);
+}
+
+.shadow {
+    border: solid 1px rgb(219, 219, 219);
+}

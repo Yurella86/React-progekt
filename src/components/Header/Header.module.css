@@ -1,0 +1,28 @@
+
+.head {
+    grid-column: 1 / 4;
+    border: solid 1px gray;
+    background-color: rgb(49, 49, 49);
+    color: rgb(255, 255, 255);
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 10px;
+    font-size: 18px;
+}
+
+.menu span {
+    color: rgb(0, 199, 0);
+    text-shadow: 0.5px -0.5px 1px rgba(255, 255, 255, 0.747) ;
+}
+
+.menu button {
+    margin: 3px 15px;
+    background-color: rgb(0, 199, 0);
+    border: none;
+    border-radius: 4px;
+    height: 20px;
+    font-size: 12px;
+}
