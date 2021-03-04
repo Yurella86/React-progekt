@@ -1,24 +1,41 @@
 
 import React from "react";
 import Post from "./Post/Post";
-import s from "./Myposts.module.css";
+import s from "./MyPosts.module.css";
 
-const Myposts = () => {
+
+
+const MyPosts = (props) => {
+
+    let newPostElement = React.createRef()
+
+    let addPost = () => {
+        debugger
+        let text = newPostElement.current.value;
+        props.addPost(text);
+    };
+
+
+    let postElement = props.posts.map(p => <Post massage={p.message} like={p.likes} />);
+
     return (
-        <div>
+        <div className={s.postsBlock}>
             <div>
-                My posts
+                <h3>My posts</h3>
+            </div>
+            <div>
+                <textarea
+                    ref={newPostElement}
+                ></textarea>
+            </div>
+            <div>
+                <button className={s.button} onClick={addPost} >add</button>
             </div>
 
-            <textarea name="text" id="2" cols="10" rows="2"></textarea>
-            <button className={s.button}>add</button>
-
-            <Post massage='Hi' like='1' />
-            <Post massage='Hello' like='7' />
-
+            {postElement}
 
         </div >
     );
 }
 
-export default Myposts;
+export default MyPosts;

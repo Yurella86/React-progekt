@@ -2,7 +2,7 @@
 .item {
     display: flex;
     width: 50px;
-    margin-top: 2px;
+    margin-bottom: 25px;
 }
 
 .item img {

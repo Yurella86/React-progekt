@@ -1,9 +1,10 @@
 
 .header {
+    margin: 5px 10px ;
+    width: 100%;
     display: grid;
-    grid-template-columns: 170px 740px 100px;
+    grid-template-columns: 170px 740fr 300px;
     grid-template-rows: 40px auto 100% 50px;
-    min-width: 600px;
 }
 .logo {
     background-image: url('https://pngimg.com/uploads/mario/mario_PNG53.png');
