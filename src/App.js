@@ -1,31 +1,36 @@
+
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import './App.css';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
-import Messages from "./components/Messages/Messages";
+import Dialogs from "./components/Messages/Dialogs";
 import Profile from './components/Profile/Profile';
 import Right from './components/Right/Right';
 import Sidebar from './components/Sidebar/Sidebar';
 
-const App = () => {
-  return (
-    <BrowserRouter>
-      <div className='header'>
-        <Header />
-        <Sidebar />
+const App = (props) => {
+  return (<BrowserRouter>
+    <div className='header'>
+      <Header />
+      <Sidebar />
+      <div className='app-wrapper-content'>
 
-        <div className='app-wrapper-content'>
+        <Route path='/profile'
+          component={() => <Profile
+            profilePage={props.state.profilePage}
+            addPost={props.addPost}
+            updateNewPostText={props.updateNewPostText} />} />
 
-          <Route path='/profile' component={Profile} />
-          <Route path='/message' component={Messages} />
+        <Route path='/message'
+          component={() => <Dialogs dialogsPage={props.state.dialogsPage} />} />
 
-        </div>
+      </div>
 
-        <Right />
-        <Footer />
-      </div >
-    </BrowserRouter>
+      <Right />
+      <Footer />
+    </div >
+  </BrowserRouter>
   );
 }
 
