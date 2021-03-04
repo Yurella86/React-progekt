@@ -6,16 +6,24 @@ import s from "./Myposts.module.css";
 
 
 const MyPosts = (props) => {
+    debugger
+    let postElement = props.posts.map(p => <Post massage={p.message} like={p.likes} />);
 
     let newPostElement = React.createRef()
 
     let addPost = () => {
         let text = newPostElement.current.value;
         props.newAddPost(text);
+        props.updateNewPostText('')
+    };
+
+    let onPostOnChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
+
     };
 
 
-    let postElement = props.posts.map(p => <Post massage={p.message} like={p.likes} />);
 
     return (
         <div className={s.postsBlock}>
@@ -23,9 +31,7 @@ const MyPosts = (props) => {
                 <h3>My posts</h3>
             </div>
             <div>
-                <textarea
-                    ref={newPostElement}
-                ></textarea>
+                <textarea ref={newPostElement} onChange={onPostOnChange} value={props.newPostText} />
             </div>
             <div>
                 <button className={s.button} onClick={addPost} >add</button>
