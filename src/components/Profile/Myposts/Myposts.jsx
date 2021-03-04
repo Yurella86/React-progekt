@@ -1,7 +1,7 @@
 
 import React from "react";
 import Post from "./Post/Post";
-import s from "./MyPosts.module.css";
+import s from "./Myposts.module.css";
 
 
 
@@ -10,9 +10,8 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef()
 
     let addPost = () => {
-        debugger
         let text = newPostElement.current.value;
-        props.addPost(text);
+        props.newAddPost(text);
     };
 
 

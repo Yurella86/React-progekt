@@ -1,4 +1,4 @@
-let renderEntireTree = () => {
+let reRenderEntireTree = () => {
     console.log('State was changed')
 }
 
@@ -36,18 +36,18 @@ let state = {
     }
 };
 
-export let addPost = (postMessage) => {
+export let newAddPost = (postMessage) => {
     let newPost = {
         id: 1,
         message: postMessage,
         likes: '0'
     };
     state.profilePage.posts.push(newPost);
+    reRenderEntireTree(state);
 };
 
-
-
-
-
+export const subscribe = (observer) => {
+    reRenderEntireTree = observer;
+};
 
 export default state;

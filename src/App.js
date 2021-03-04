@@ -19,7 +19,7 @@ const App = (props) => {
         <Route path='/profile'
           component={() => <Profile
             profilePage={props.state.profilePage}
-            addPost={props.addPost}
+            newAddPost={props.newAddPost}
             updateNewPostText={props.updateNewPostText} />} />
 
         <Route path='/message'
