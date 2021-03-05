@@ -1,7 +1,7 @@
 
 import React from "react";
 import Post from "./Post/Post";
-import s from "./Myposts.module.css";
+import s from "./MyPosts.module.css";
 
 
 
@@ -12,8 +12,7 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef()
 
     let addPost = () => {
-        let text = newPostElement.current.value;
-        props.newAddPost(text);
+        props.newAddPost();
         props.updateNewPostText('')
     };
 
@@ -22,8 +21,6 @@ const MyPosts = (props) => {
         props.updateNewPostText(text);
 
     };
-
-
 
     return (
         <div className={s.postsBlock}>

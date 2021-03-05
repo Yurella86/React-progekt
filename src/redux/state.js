@@ -36,10 +36,10 @@ let state = {
     }
 };
 
-export let newAddPost = (postMessage) => {
+export let newAddPost = () => {
     let newPost = {
         id: 1,
-        message: postMessage,
+        message: state.profilePage.newPostText,
         likes: '0'
     };
     state.profilePage.posts.push(newPost);
